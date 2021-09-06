@@ -1,17 +1,18 @@
 package com.rujirakongsomran.jc_signupwithgooglebutton
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
+import androidx.compose.foundation.layout.Row
+import androidx.compose.material.*
 
-import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
 import  androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.rujirakongsomran.jc_signupwithgooglebutton.ui.theme.JC_SignupWithGoogleButtonTheme
 import com.rujirakongsomran.jc_signupwithgooglebutton.ui.theme.Shapes
 
 @ExperimentalMaterialApi
@@ -27,14 +28,24 @@ fun GoogleButton() {
         ),
         color = MaterialTheme.colors.surface
     ) {
-
+        Row {
+            Icon(
+                painter = painterResource(
+                    id = R.drawable.ic_google
+                ),
+                contentDescription = "Google Button",
+            )
+            Text(text = "Sign Up with Google")
+        }
     }
 }
 
 
 @ExperimentalMaterialApi
 @Composable
-@Preview(showBackground = true)
+@Preview
 private fun GoogleButtonPreview() {
-    GoogleButton()
+    JC_SignupWithGoogleButtonTheme() {
+        GoogleButton()
+    }
 }
