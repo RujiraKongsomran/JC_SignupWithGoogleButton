@@ -1,5 +1,6 @@
 package com.rujirakongsomran.jc_signupwithgooglebutton
 
+import android.util.Log
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
@@ -85,10 +86,28 @@ fun GoogleButton(
 @Preview
 private fun GoogleButtonPreview() {
     JC_SignupWithGoogleButtonTheme() {
-        GoogleButton(
-            text = "Sign Up with Google",
-            loadingText = "Creating Account...",
-            onClicked = {}
-        )
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            GoogleButton(
+                text = "Sign Up with Google",
+                loadingText = "Creating Account...",
+                icon = painterResource(id = R.drawable.ic_google),
+                onClicked = {
+                    Log.d("googleButton", "Clicked!")
+                }
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            GoogleButton(
+                text = "Sign Up with facebook",
+                loadingText = "Creating Account...",
+                icon = painterResource(id = R.drawable.ic_facebook),
+                onClicked = {
+                    Log.d("facebookButton", "Clicked!")
+                }
+            )
+        }
     }
 }
