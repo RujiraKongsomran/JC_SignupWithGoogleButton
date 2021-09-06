@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -16,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.rujirakongsomran.jc_signupwithgooglebutton.ui.theme.JC_SignupWithGoogleButtonTheme
 
 class MainActivity : ComponentActivity() {
+    @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -25,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-
+                    GoogleButton()
                 }
             }
         }

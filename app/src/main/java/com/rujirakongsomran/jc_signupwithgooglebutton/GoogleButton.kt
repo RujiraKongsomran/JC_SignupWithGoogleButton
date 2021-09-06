@@ -1,5 +1,8 @@
 package com.rujirakongsomran.jc_signupwithgooglebutton
 
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.LinearOutSlowInEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -37,6 +40,12 @@ fun GoogleButton() {
                     end = 16.dp,
                     top = 12.dp,
                     bottom = 12.dp
+                )
+                .animateContentSize(
+                    animationSpec = tween(
+                        durationMillis = 300,
+                        easing = LinearOutSlowInEasing
+                    )
                 ),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
@@ -51,6 +60,7 @@ fun GoogleButton() {
             Spacer(modifier = Modifier.width(8.dp))
             Text(text = "Sign Up with Google")
             if (clicked) {
+                Spacer(modifier = Modifier.width(16.dp))
                 CircularProgressIndicator(
                     modifier = Modifier
                         .height(16.dp)
