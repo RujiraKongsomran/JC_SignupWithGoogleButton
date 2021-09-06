@@ -22,7 +22,10 @@ import com.rujirakongsomran.jc_signupwithgooglebutton.ui.theme.Shapes
 
 @ExperimentalMaterialApi
 @Composable
-fun GoogleButton() {
+fun GoogleButton(
+    text: String = "Sign Up with Google",
+    loadingText: String = "Creating Account..."
+) {
     var clicked by remember { mutableStateOf(false) }
     Surface(
         onClick = { clicked = !clicked },
@@ -58,7 +61,7 @@ fun GoogleButton() {
                 tint = Color.Unspecified,
             )
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Sign Up with Google")
+            Text(text = if (clicked) loadingText else text)
             if (clicked) {
                 Spacer(modifier = Modifier.width(16.dp))
                 CircularProgressIndicator(
