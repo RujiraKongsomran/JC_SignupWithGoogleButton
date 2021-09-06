@@ -34,6 +34,7 @@ fun GoogleButton() {
                     id = R.drawable.ic_google
                 ),
                 contentDescription = "Google Button",
+                tint = Color.Unspecified
             )
             Text(text = "Sign Up with Google")
         }
