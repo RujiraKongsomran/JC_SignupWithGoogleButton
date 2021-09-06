@@ -1,9 +1,7 @@
 package com.rujirakongsomran.jc_signupwithgooglebutton
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 
 import androidx.compose.runtime.Composable
@@ -33,6 +31,13 @@ fun GoogleButton() {
         color = MaterialTheme.colors.surface
     ) {
         Row(
+            modifier = Modifier
+                .padding(
+                    start = 12.dp,
+                    end = 16.dp,
+                    top = 12.dp,
+                    bottom = 12.dp
+                ),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
@@ -43,6 +48,7 @@ fun GoogleButton() {
                 contentDescription = "Google Button",
                 tint = Color.Unspecified
             )
+            Spacer(modifier = Modifier.width(8.dp))
             Text(text = "Sign Up with Google")
         }
     }
