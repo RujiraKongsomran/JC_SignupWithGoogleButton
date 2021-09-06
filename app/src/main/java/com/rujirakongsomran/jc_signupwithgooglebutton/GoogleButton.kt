@@ -46,10 +46,19 @@ fun GoogleButton() {
                     id = R.drawable.ic_google
                 ),
                 contentDescription = "Google Button",
-                tint = Color.Unspecified
+                tint = Color.Unspecified,
             )
             Spacer(modifier = Modifier.width(8.dp))
             Text(text = "Sign Up with Google")
+            if (clicked) {
+                CircularProgressIndicator(
+                    modifier = Modifier
+                        .height(16.dp)
+                        .width(16.dp),
+                    strokeWidth = 2.dp,
+                    color = MaterialTheme.colors.primary
+                )
+            }
         }
     }
 }
